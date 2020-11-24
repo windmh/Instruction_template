@@ -1,0 +1,152 @@
+.header {
+  &-top {
+    background: $color-primary;
+    padding: $pd-0 $pd-1;
+    display: flow-root;
+    &__left {
+      float: left;
+      margin-top: $mg-1;
+      ul {
+        margin: 0;
+        list-style: none;
+        li {
+          display: inline-block;
+          @include styleText($color-white-0, $fs-1, $fw-normal, 0);
+          margin-right: 2em;
+          i {
+            margin-right: 0.2em;
+          }
+          a {
+            color: $color-white-0;
+            transition: 0.3s all;
+            &:hover {
+              text-decoration: none;
+              color: $color-blue-1;
+              transition: 0.3s all;
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      float: right;
+      a {
+        i {
+          @include styleText($color-white-0, 15px, $fw-normal, $ls-normal);
+          line-height: 15px;
+          background-color: $color-black-3;
+          padding: 8px 10px;
+          border: 1px solid $color-black-3;
+          &:hover {
+            background-color: $color-primary;
+            border: 1px solid $color-white-0;
+            transition: 0.5s all;
+          }
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      @include mediaQuery("small") {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  &-bottom {
+    padding: 1em 0;
+    &__content {
+      padding: 0;
+    }
+    .instructionNavbar {
+      padding: 0;
+      .navbar-logo {
+        a {
+          padding: 0;
+          h1.title {
+            margin: 0;
+            @include styleText($color-black-1, $fs-4, $fw-bold-1, $ls-normal);
+            text-transform: uppercase;
+            i {
+              font-size: 30px;
+            }
+            span {
+              display: block;
+              @include styleText($color-primary, $fs-2, $fw-bold-1, $ls-1);
+              text-align: center;
+            }
+            @include mediaQuery("small") {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+      .navbar-btn {
+        background-color: $color-black-1;
+        color: $color-primary;
+        font-size: $fs-3;
+        border-radius: 0;
+        &:focus {
+          outline: none;
+        }
+      }
+      .navbar-left {
+        ul {
+          li {
+            margin: 0 15px;
+            a.nav-link {
+              @include styleText($color-black-3, 0.9em, $fw-bold-0, $ls-0);
+              padding: 8px 10px;
+              text-transform: uppercase;
+              position: relative;
+              &::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                left: 0;
+                bottom: 0;
+                background-color: $color-primary;
+              }
+              &:hover::after {
+                width: 100%;
+                transition: 0.5s all;
+              }
+            }
+            &.active > a {
+              color: $color-primary;
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+        // Reponsive
+        @include mediaQuery("large") {
+          ul > li {
+            margin: 0;
+            a.nav-link {
+              font-size: 0.85em;
+              letter-spacing: 0px;
+              padding: 14px 5px;
+            }
+          }
+        }
+        @include mediaQuery("medium") {
+          ul {
+            background-color: #eeeeee;
+            padding: $pd-1;
+            li {
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+      @include mediaQuery("small") {
+        padding: 0 1em;
+      }
+    }
+  }
+}

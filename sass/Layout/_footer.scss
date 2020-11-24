@@ -1,0 +1,99 @@
+.footer {
+  background-color: $color-black-4;
+  &-top {
+    padding: $pd-4 0;
+    h3 {
+      @include styleText($color-primary, $fs-3, $fw-bold-0, $ls-0);
+      margin-bottom: 1.5em;
+    }
+    p {
+      @include styleText($color-gray-4, 0.9em, $fw-normal, $ls-0);
+      line-height: 2;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        margin-bottom: $mg-2;
+        @include styleText($color-gray-4, $fs-0, $fw-normal, 0);
+        i {
+          color: $color-primary;
+          margin-right: $mg-2;
+        }
+        a {
+          @include styleText($color-gray-4, 0.9em, $fw-normal, $ls-0);
+          transition: all 0.3s;
+          &:hover {
+            color: $color-white-0;
+            transition: all 0.3s;
+            text-decoration: none;
+          }
+        }
+        &.list-end {
+          margin: 0;
+        }
+      }
+      &.address {
+        li {
+          i {
+            color: $color-white-0;
+            width: 2em;
+            height: 2em;
+            border: solid 1px $color-white-0;
+            line-height: 32px;
+            text-align: center;
+          }
+          a {
+            font-size: $fs-0;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+  &-form {
+    margin-top: 3em;
+    h3 {
+      margin: 0;
+    }
+    &-right {
+      .form-email {
+        .input-email {
+          @include inputStyle($color-white-0, 14px, 10px, transparent);
+          @include styleText($color-gray-5, 0.9em, $fw-normal, $ls-1);
+          width: 70%;
+          margin-right: $mg-2;
+          &:focus {
+            outline: none;
+          }
+        }
+        .input-submit {
+          @include inputStyle($color-primary, 12px, 0, transparent);
+          @include styleText($color-white-0, $fs-0, $fw-normal, $ls-0);
+          text-transform: uppercase;
+          width: 20%;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  &-bottom {
+    padding: $pd-1 0;
+    background-color: $color-black-5;
+    p {
+      margin: 0;
+      @include styleText($color-white-0, $fs-1, $fw-normal, $ls-1);
+
+      a {
+        color: $color-primary;
+        transition: all 0.3s;
+        &:hover {
+          color: $color-white-0;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

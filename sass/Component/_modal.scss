@@ -1,0 +1,14 @@
+.modal {
+  &-md {
+    max-width: 600px;
+    margin: $mg-4 auto 0;
+    h4 {
+      @include styleText($color-primary, $fs-8, $fw-bold-0, $ls-normal);
+      text-transform: uppercase;
+    }
+    p {
+      padding: 20px 0;
+      @include styleText($color-gray-3, $fs-1, $color-gray-7, $ls-0);
+    }
+  }
+}

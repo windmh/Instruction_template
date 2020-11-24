@@ -1,0 +1,86 @@
+.carousel {
+  &-indi {
+    bottom: 3%;
+    li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid $color-white-0;
+      background-color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      &.active {
+        background-color: $color-white-0;
+      }
+    }
+  }
+
+  &-inner {
+    .item1 {
+      @include styleBgCarousel(
+        "banner1",
+        $color-black-rgba1,
+        $color-black-rgba2
+      );
+    }
+    .item2 {
+      @include styleBgCarousel(
+        "banner2",
+        $color-black-rgba1,
+        $color-black-rgba2
+      );
+    }
+    .item3 {
+      @include styleBgCarousel(
+        "banner3",
+        $color-black-rgba1,
+        $color-black-rgba2
+      );
+    }
+    .item {
+      min-height: 524px;
+      .carousel-content {
+        padding-top: $pd-3;
+        top: 0;
+        left: 0;
+        right: 0;
+        h3 {
+          margin: 0;
+          @include styleText($color-white-0, 3em, 300, $ls-0);
+          span {
+            font-weight: $fw-bold-0;
+          }
+        }
+        p {
+          @include styleText($color-white-0, 1em, 300, $ls-3);
+          margin: 1em auto 2em;
+          width: 70%;
+        }
+        @include mediaQuery("large") {
+          h3 {
+            font-size: 2.2em;
+          }
+          p {
+            width: 100%;
+          }
+        }
+        @include mediaQuery("medium") {
+          p {
+            letter-spacing: 3px;
+            font-size: 0.95em;
+            width: 84%;
+          }
+        }
+        @include mediaQuery("small") {
+          h3 {
+            font-size: 1.7em;
+          }
+          p {
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            margin: 0.3em auto 1em;
+          }
+        }
+      }
+    }
+  }
+}

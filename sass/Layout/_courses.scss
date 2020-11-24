@@ -1,0 +1,50 @@
+.courses{
+    padding: $pd-4 0;
+    .course-item{
+        border: 1px solid $color-black-0;
+        padding: 2em;
+        text-align: left;
+        &2{
+            border-left: none;
+            border-right: none;
+        }
+        i{
+            color:color-black-0;
+            font-size: 2em;
+        }
+        h4{
+            @include styleText($color-primary, 1.8em, $fw-bold-0, 0);
+            margin: .7em 0;
+        }
+        h5{
+            @include styleText($color-black-0, 1em, $fw-bold-0, 0);
+            text-transform: uppercase;
+            margin: 1em 0 0.2em;
+        }
+        p{
+            @include styleText($color-gray-0, 15px, normal, $ls-0);
+            margin:10px 0 0;
+        }
+        @include mediaQuery('large'){
+            h4{
+                font-size: 1.5em;
+            }
+        }
+
+        @include mediaQuery('medium'){
+            &2{
+                border-left: 1px solid $color-black-0;
+                border-right: 1px solid $color-black-0;
+                margin: 2em 0;
+            }
+        }
+
+    }
+    
+    @include mediaQuery('large'){
+        .container{
+            max-width: 96%;
+        }
+    }
+
+}

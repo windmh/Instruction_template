@@ -1,0 +1,30 @@
+.services {
+  padding-top: $pd-4;
+  padding-bottom: calc($pd-4 - 30px);
+  @include styleHeading($color-primary, $fs-5, $fw-bold-0, $color-black-0);
+
+  &-grid {
+    margin-bottom: 30px;
+    .grid1 {
+      padding: 24px 40px;
+      background-color: $color-white-0;
+      box-shadow: 0 1px 8px 0 $color-black-white;
+      transition: all 0.5s;
+      &:hover {
+        background-color: $color-blue-0;
+      }
+      i {
+        font-size: $fs-5;
+        color: $color-primary;
+      }
+      h4 {
+        @include styleText($color-black-2, 20px, 500, $ls-normal);
+        text-transform: uppercase;
+        margin: 25px 0 20px;
+      }
+      p {
+        @include styleText($color-gray-1, $fs-1, $fw-normal, $ls-4);
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.news {
+  padding: $pd-4 0;
+  @include styleHeading($color-primary, $fs-5, $fw-bold-0, $color-black-0);
+  &-grid1 {
+    margin-top: 5em;
+  }
+  &-grids {
+    &__img > img {
+      border: solid $color-gray-6;
+    }
+    &__info {
+      h5 {
+        margin: 0;
+        a {
+          @include styleText($color-black-0, 20px, $fw-bold-0, $ls-0);
+          text-transform: uppercase;
+          transition: 0.3s all;
+          &:hover {
+            color: $color-primary;
+            text-decoration: none;
+          }
+        }
+      }
+      h6 {
+        margin: 1em 0;
+        @include styleText($color-primary, 1em, $fw-bold-0, $ls-normal);
+      }
+      p {
+        margin: 0;
+        @include styleText($color-gray-3, 0.9em, $fw-normal, $ls-0);
+      }
+    }
+  }
+}

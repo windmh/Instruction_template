@@ -1,0 +1,55 @@
+.feedback {
+  padding: $pd-4 0;
+  @include styleHeading($color-primary, $fs-5, $fw-bold-0, $color-white-0);
+  @include styleBgFixed("banner3");
+  &-grids {
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 1px 7px #8e8e8e;
+  }
+  &-info {
+    margin: 1em;
+  }
+
+  &-top {
+    text-align: left;
+    padding: $pd-1 1.5em;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 100%;
+      left: 27%;
+      border-top: 9px solid rgba(0, 0, 0, 0.45);
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+    }
+    p {
+      margin: 0;
+      @include styleText($color-white-0, 0.9em, $fw-normal, $ls-0);
+    }
+  }
+
+  &-bottom {
+    margin: 2em auto 0;
+    width: 55%;
+    &__img {
+      width: 28%;
+      float: left;
+    }
+    &__info {
+      margin-left: 0.5em;
+      float: left;
+      h5 {
+        @include styleText($color-white-0, 1.1em, $fw-bold-0, 0);
+      }
+      p {
+        @include styleText($color-primary, 0.9em, $fw-normal, $ls-0);
+      }
+    }
+  }
+}

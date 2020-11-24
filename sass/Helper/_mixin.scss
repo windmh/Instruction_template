@@ -1,0 +1,85 @@
+@mixin styleText($color, $fs, $fw, $ls) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+  letter-spacing: $ls;
+}
+
+@mixin styleBgCarousel($nameBanner, $color1, $color2) {
+  background-image: linear-gradient(
+      $color1,
+      $color2
+    ),
+    url(/img/#{$nameBanner}.jpg);
+  background-size: cover;
+}
+
+@mixin styleButton($bg-color, $border, $pd-top-bottom, $pd-right-left) {
+  background-color: $bg-color;
+  border: 1px solid $border;
+  padding: $pd-top-bottom $pd-right-left;
+}
+
+@mixin hoverButton($bg-color, $border, $color) {
+  background-color: $bg-color;
+  border: 1px solid $border;
+  color: $color;
+}
+
+@mixin styleHeading($color-title, $fs-title, $fw-bold-title, $color-info) {
+  h3.heading-title {
+    @include styleText($color-title, $fs-title, $fw-bold-title, $ls-4);
+    text-transform: uppercase;
+    margin-bottom: $mg-3;
+    span.info {
+      display: block;
+      @include styleText($color-info, $fs-6, $fw-medium-1, $ls-3);
+      text-transform: none;
+      margin-top: $mg-2;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background-color: $color-black-2;
+        width: 70px;
+        right: 47%;
+        bottom: -132%;
+      }
+    }
+    @include mediaQuery("medium") {
+      font-size: 35px;
+    }
+  }
+}
+
+@mixin styleBgFixed($name) {
+  background-image: url(/img/#{$name}.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@mixin inputStyle ($bg-color, $pd-top-bottom, $pd-left-right, $border) {
+    background-color: $bg-color;
+    padding: $pd-top-bottom $pd-left-right;
+    border: 1px solid $border;
+}
+
+@mixin mediaQuery($screen) {
+  // dung voi mang, map la ten mang, bien $screen la ten phan tu trong mang
+  @if map-has-key($map: $breakpoints, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$screen}` khong ton tai";
+  }
+}
+
+// h1{
+//     background-image: url(..);
+// }

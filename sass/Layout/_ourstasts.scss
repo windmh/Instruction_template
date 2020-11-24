@@ -1,0 +1,19 @@
+.stats {
+  padding: $pd-4 0;
+  @include styleBgFixed("banner2");
+  @include styleHeading($color-primary, $fs-5, $fw-bold-0, $color-white-0);
+  &-counter {
+    i {
+      color: $color-white-0;
+      font-size: $fs-5;
+    }
+    h3 {
+      @include styleText($color-primary, 1.3em, $fw-bold-0, $ls-2);
+      margin: 20px 0 10px;
+    }
+    p {
+      @include styleText($color-white-0, 3em, 100, $ls-1);
+      margin: 0.1em 0 0.1em;
+    }
+  }
+}

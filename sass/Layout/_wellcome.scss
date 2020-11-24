@@ -1,0 +1,17 @@
+.wellcome {
+  padding-top: $pd-4;
+  @include styleHeading($color-primary, $fs-5, $fw-bold-0, $color-black-0);
+
+  p {
+    width: 80%;
+    margin: 0 auto;
+    @include styleText($color-gray-0, 15px, $fw-normal, $ls-normal);
+    letter-spacing: $ls-0;
+  }
+
+  @include mediaQuery("medium") {
+    p {
+      width: 96%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.btn-default {
+  &:link,
+  &:visited {
+    @include styleButton(transparent, $color-white-0, 11px, 20px);
+    border-radius: 0;
+    @include styleText($color-white-0, $fs-7, $fw-normal, $ls-0);
+  }
+  &:hover {
+    @include hoverButton($color-primary, transparent, $color-white-0);
+    transition: 0.5s all;
+  }
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
